@@ -1,9 +1,8 @@
+require('dotenv').config();
 const Joi = require('joi');
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
-const config = require('config');
 const jwt = require('jsonwebtoken');
-const _= require('lodash');
 
 const schema = Joi.object({
     email: Joi.string().min(5).max(255).required().email(),

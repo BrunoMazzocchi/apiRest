@@ -2,7 +2,8 @@ const config = require('config');
 const mongoose = require('mongoose');
 const auth = require('./routes/auth');
 const express = require('express');
-
+const xFrameOptions = require('x-frame-options');
+var cors = require('cors')
 
 require('dotenv').config();
 
@@ -22,6 +23,11 @@ connection.once('open', () => {
 const usersRouter = require('./routes/user');
 const postRouter = require('./routes/post');
 const authRouter = require('./routes/auth');
+
+
+
+
+app.use(cors())
 
 
 app.use("/user", usersRouter);

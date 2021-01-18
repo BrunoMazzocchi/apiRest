@@ -17,7 +17,7 @@ const newPost = async (req, res) => {
     const post = new Post({
         title: req.body.title,
         content: req.body.content,
-        image: req.file.path
+        image: req.file.path 
         })
     
     await post.save(
